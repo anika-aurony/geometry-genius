@@ -38,3 +38,13 @@ document.getElementById('rhombusButton').addEventListener('click', function(){
     const rhombusArea = 0.5 * rhombusD1 * rhombusD2;
     console.log(rhombusArea)
 })
+
+
+// Pentagon
+document.getElementById('pentagonButton').addEventListener('click', function(){
+    const pentagonP = getInput('pentagonP')
+    const pentagonB = getInput('pentagonB')
+    const pentagonArea = 0.5 * pentagonP * pentagonB;
+    console.log(pentagonArea);
+})
+
