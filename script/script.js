@@ -12,7 +12,36 @@ document.getElementById('triangleButton').addEventListener('click', function(){
     const triangleb = getInput('triangleB');
     const triangleh = getInput('triangleH');  
     const triangleArea = .5*triangleb*triangleh;
+    const triangleResult = triangleArea.toFixed(2)
     console.log(triangleArea);
+    ///
+    const container = document.getElementById('orderList');
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    const span1 = document.createElement('span');
+    const sup= document.createElement('sup');
+    const sup1= document.createElement('sup');
+    const button= document.createElement('button');
+    button.classList.add('btn')
+    button.classList.add('btn-info')
+    button.classList.add('w-50')
+    button.classList.add('p-0')
+    button.classList.add('ms-1')
+    const p = 'Triangle  '
+    li.innerText = p;
+    span.innerText = triangleResult;
+    li.appendChild(span);
+    const unit = 'cm'
+    const power = '2' ;
+    span1.innerText = unit;
+    sup.innerText = power;
+    sup1.innerText = power;
+    li.appendChild(span1)
+    li.appendChild(sup)
+    button.innerText = 'convert to m'
+    button.appendChild(sup1);
+    li.append(button)
+    container.appendChild(li)
 })
 
 // Rectangle
@@ -47,4 +76,13 @@ document.getElementById('pentagonButton').addEventListener('click', function(){
     const pentagonArea = 0.5 * pentagonP * pentagonB;
     console.log(pentagonArea);
 })
+
+//Ellipse
+document.getElementById('ellipseButton').addEventListener('click', function(){
+    const ellipseA = getInput('ellipseA')
+    const ellipseB = getInput('ellipseB')
+    const ellipseArea = 3.14 * ellipseA * ellipseB;
+    console.log(ellipseArea);
+})
+
 
