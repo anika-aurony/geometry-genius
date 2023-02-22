@@ -1,3 +1,12 @@
+document.getElementById('bgColor').addEventListener('mouseover', function () {
+    console.log('hi');
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    document.getElementById('setColor').style.backgroundColor = "#" + randomColor;
+    
+})
+
+
+
 // Function to get input
 function getInput(input) {
     const inputField = document.getElementById(input);
