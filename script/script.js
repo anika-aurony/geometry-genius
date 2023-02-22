@@ -6,10 +6,6 @@ function getInput(input) {
     const inputFloat = parseFloat(inputValue);
     inputField.value = '';
     return inputFloat;
-
-
-
-
 }
 
 // Function to display result
@@ -27,7 +23,6 @@ function setOutput(output, p) {
     button.classList.add('p-0');
     button.classList.add('ms-2');
     li.classList.add('mb-2');
-
     li.innerText = p;
     span.innerText = output;
     li.appendChild(span);
@@ -45,14 +40,14 @@ function setOutput(output, p) {
 
 }
 
-function errorMessage() {
-    document.getElementById('triangleAlert').innerText = 'Please provide positive number';
+function errorMessage(alert) {
+    document.getElementById(alert).innerText = 'Please provide positive number';
 }
+
 // Triangle
 document.getElementById('triangleButton').addEventListener('click', function () {
     const triangleb = getInput('triangleB');
     const triangleh = getInput('triangleH');
-    console.log(typeof (triangleb))
     if (triangleb >= 0 && triangleb <= 999999999 && triangleh >= 0 && triangleh <= 999999999) {
         const triangleArea = .5 * triangleb * triangleh;
         const triangleResult = triangleArea.toFixed(2)
@@ -60,54 +55,69 @@ document.getElementById('triangleButton').addEventListener('click', function () 
         // Display Result
         const p = 'Triangle  '
         setOutput(triangleResult, p)
+        document.getElementById('triangleAlert').style.display = "none"
     }
     else {
-        errorMessage()
-        // alert('Please provide valid number')
+        document.getElementById('triangleAlert').style.display = "block"
+        errorMessage('triangleAlert');
     }
-
-
-
-
-
-
-
 })
 
 // Rectangle
 document.getElementById('rectangleButton').addEventListener('click', function () {
     const rectangleW = getInput('rectangleW');
     const rectangleL = getInput('rectangleL');
-    const rectangleArea = rectangleW * rectangleL;
-    const rectangleResult = rectangleArea.toFixed(2)
+    if (rectangleW >= 0 && rectangleW <= 999999999 && rectangleL >= 0 && rectangleL <= 999999999) {
+        const rectangleArea = rectangleW * rectangleL;
+        const rectangleResult = rectangleArea.toFixed(2)
 
-    // Display Result
-    const p = 'Rectangle '
-    setOutput(rectangleResult, p)
+        // Display Result
+        const p = 'Rectangle '
+        setOutput(rectangleResult, p);
+        document.getElementById('rectangleAlert').style.display = "none"
+    }
+    else {
+        document.getElementById('rectangleAlert').style.display = "block"
+        errorMessage('rectangleAlert');
+    }
 });
 
 //Paralellogram
 document.getElementById('paralellogramButton').addEventListener('click', function () {
     const paralellogramB = getInput('paralellogramB')
     const paralellogramH = getInput('paralellogramH')
-    const paralellogramArea = paralellogramB * paralellogramH;
-    const paralellogramResult = paralellogramArea.toFixed(2)
+    if (paralellogramB >= 0 && paralellogramB <= 999999999 && paralellogramH >= 0 && paralellogramH <= 999999999) {
+        const paralellogramArea = paralellogramB * paralellogramH;
+        const paralellogramResult = paralellogramArea.toFixed(2);
 
-    // Display Result
-    const p = 'Paralellogram '
-    setOutput(paralellogramResult, p)
+        // Display Result
+        const p = 'Paralellogram ';
+        setOutput(paralellogramResult, p);
+        document.getElementById('parallelogramAlert').style.display = "none"
+    }
+    else {
+        document.getElementById("parallelogramAlert").style.display = "block"
+        errorMessage('parallelogramAlert');
+    }
 })
 
 // Rhombus
 document.getElementById('rhombusButton').addEventListener('click', function () {
     const rhombusD1 = getInput('rhombusD1')
     const rhombusD2 = getInput('rhombusD2')
-    const rhombusArea = 0.5 * rhombusD1 * rhombusD2;
-    const rhombusResult = rhombusArea.toFixed(2)
+    if (rhombusD1 >= 0 && rhombusD1 <= 999999999 && rhombusD2 >= 0 && rhombusD2 <= 999999999) {
+        const rhombusArea = 0.5 * rhombusD1 * rhombusD2;
+        const rhombusResult = rhombusArea.toFixed(2)
 
-    // Display Result
-    const p = 'Rhombus '
-    setOutput(rhombusResult, p)
+        // Display Result
+        const p = 'Rhombus '
+        setOutput(rhombusResult, p)
+        document.getElementById('rhombusAlert').style.display = "none"
+    }
+    else {
+        document.getElementById("rhombusAlert").style.display = "block"
+        errorMessage('rhombusAlert');
+    }
 })
 
 
@@ -115,24 +125,38 @@ document.getElementById('rhombusButton').addEventListener('click', function () {
 document.getElementById('pentagonButton').addEventListener('click', function () {
     const pentagonP = getInput('pentagonP')
     const pentagonB = getInput('pentagonB')
-    const pentagonArea = 0.5 * pentagonP * pentagonB;
-    const pentagonResult = pentagonArea.toFixed(2)
+    if (pentagonP >= 0 && pentagonP <= 999999999 && pentagonB >= 0 && pentagonB <= 999999999) {
+        const pentagonArea = 0.5 * pentagonP * pentagonB;
+        const pentagonResult = pentagonArea.toFixed(2)
 
-    // Display Result
-    const p = 'Pentagon '
-    setOutput(pentagonResult, p)
+        // Display Result
+        const p = 'Pentagon '
+        setOutput(pentagonResult, p);
+        document.getElementById('pentagonAlert').style.display = "none"
+    }
+    else {
+        document.getElementById("pentagonAlert").style.display = "block"
+        errorMessage('pentagonAlert');
+    }
 })
 
 //Ellipse
 document.getElementById('ellipseButton').addEventListener('click', function () {
     const ellipseA = getInput('ellipseA')
     const ellipseB = getInput('ellipseB')
-    const ellipseArea = 3.14 * ellipseA * ellipseB;
-    const ellipseResult = ellipseArea.toFixed(2)
+    if (ellipseA >= 0 && ellipseA <= 999999999 && ellipseB >= 0 && ellipseB <= 999999999) {
+        const ellipseArea = 3.14 * ellipseA * ellipseB;
+        const ellipseResult = ellipseArea.toFixed(2)
 
-    // Display Result
-    const p = 'Ellipse '
-    setOutput(ellipseResult, p)
+        // Display Result
+        const p = 'Ellipse '
+        setOutput(ellipseResult, p);
+        document.getElementById('ellipseAlert').style.display = "none";
+    }
+    else {
+        document.getElementById("ellipseAlert").style.display = "block"
+        errorMessage('ellipseAlert');
+    }
 })
 
 
