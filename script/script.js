@@ -1,30 +1,3 @@
-function setBgColor(patternName){
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    document.getElementById(patternName).style.backgroundColor = "#" + randomColor;
-}
-
-document.getElementById('bgColorTriangle').addEventListener('mouseenter', function () {
-    setBgColor("setColorTriangle");
-    
-})
-document.getElementById('bgColorRectangle').addEventListener('mouseenter', function () {
-    setBgColor("setColorRectangle"); 
-})
-document.getElementById('bgColorParallelogram').addEventListener('mouseenter', function () {
-    setBgColor("setColorParallelogram"); 
-})
-document.getElementById('bgColorRhombus').addEventListener('mouseenter', function () {
-    setBgColor("setColorRhombus"); 
-})
-document.getElementById('bgColorPentagon').addEventListener('mouseenter', function () {
-    setBgColor("setColorPentagon"); 
-})
-document.getElementById('bgColorEllipse').addEventListener('mouseenter', function () {
-    setBgColor("setColorEllipse"); 
-})
-
-
-
 // Function to get input
 function getInput(input) {
     const inputField = document.getElementById(input);
@@ -80,8 +53,8 @@ document.getElementById('triangleButton').addEventListener('click', function () 
         const triangleResult = triangleArea.toFixed(2)
 
         // Display Result
-        const p = 'Triangle  '
-        setOutput(triangleResult, p)
+        const outputName = 'Triangle  '
+        setOutput(triangleResult, outputName)
         document.getElementById('triangleAlert').style.display = "none"
     }
     else {
@@ -99,8 +72,8 @@ document.getElementById('rectangleButton').addEventListener('click', function ()
         const rectangleResult = rectangleArea.toFixed(2)
 
         // Display Result
-        const p = 'Rectangle '
-        setOutput(rectangleResult, p);
+        const outputName = 'Rectangle '
+        setOutput(rectangleResult, outputName);
         document.getElementById('rectangleAlert').style.display = "none"
     }
     else {
@@ -118,8 +91,8 @@ document.getElementById('paralellogramButton').addEventListener('click', functio
         const paralellogramResult = paralellogramArea.toFixed(2);
 
         // Display Result
-        const p = 'Paralellogram ';
-        setOutput(paralellogramResult, p);
+        const outputName = 'Paralellogram ';
+        setOutput(paralellogramResult, outputName);
         document.getElementById('parallelogramAlert').style.display = "none"
     }
     else {
@@ -137,8 +110,8 @@ document.getElementById('rhombusButton').addEventListener('click', function () {
         const rhombusResult = rhombusArea.toFixed(2)
 
         // Display Result
-        const p = 'Rhombus '
-        setOutput(rhombusResult, p)
+        const outputName = 'Rhombus '
+        setOutput(rhombusResult, outputName)
         document.getElementById('rhombusAlert').style.display = "none"
     }
     else {
@@ -157,8 +130,8 @@ document.getElementById('pentagonButton').addEventListener('click', function () 
         const pentagonResult = pentagonArea.toFixed(2)
 
         // Display Result
-        const p = 'Pentagon '
-        setOutput(pentagonResult, p);
+        const outputName = 'Pentagon '
+        setOutput(pentagonResult, outputName);
         document.getElementById('pentagonAlert').style.display = "none"
     }
     else {
@@ -176,8 +149,8 @@ document.getElementById('ellipseButton').addEventListener('click', function () {
         const ellipseResult = ellipseArea.toFixed(2)
 
         // Display Result
-        const p = 'Ellipse '
-        setOutput(ellipseResult, p);
+        const outputName = 'Ellipse '
+        setOutput(ellipseResult, outputName);
         document.getElementById('ellipseAlert').style.display = "none";
     }
     else {
@@ -186,4 +159,32 @@ document.getElementById('ellipseButton').addEventListener('click', function () {
     }
 })
 
-
+// Set random color to card background
+function setBgColor(patternName){
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    document.getElementById(patternName).style.backgroundColor = "#" + randomColor;
+}
+// Triangle Card
+document.getElementById('bgColorTriangle').addEventListener('mouseenter', function () {
+    setBgColor("setColorTriangle");    
+})
+// Rectangle Card
+document.getElementById('bgColorRectangle').addEventListener('mouseenter', function () {
+    setBgColor("setColorRectangle"); 
+})
+// Paralellogram Card
+document.getElementById('bgColorParallelogram').addEventListener('mouseenter', function () {
+    setBgColor("setColorParallelogram"); 
+})
+// Rhombus Card
+document.getElementById('bgColorRhombus').addEventListener('mouseenter', function () {
+    setBgColor("setColorRhombus"); 
+})
+// Pentagon Card
+document.getElementById('bgColorPentagon').addEventListener('mouseenter', function () {
+    setBgColor("setColorPentagon"); 
+})
+// Ellipse Card
+document.getElementById('bgColorEllipse').addEventListener('mouseenter', function () {
+    setBgColor("setColorEllipse"); 
+})
